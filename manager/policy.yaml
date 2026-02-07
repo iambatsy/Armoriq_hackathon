@@ -1,0 +1,64 @@
+version: "2026.1"
+metadata:
+  name: "advanced_travel_governance"
+  description: "Granular control for international, domestic, and emergency travel"
+
+policies:
+  - tool: "book_flight"
+    action: "ALLOW"
+    anyOf:
+      # SCENARIO 1: Budget Domestic (Optimized for Short Trips)
+      - allOf:
+          - field: "destination"
+            condition: "IN_SET"
+            value: ["Mumbai", "Delhi", "Goa", "Bangalore"]
+          - field: "price"
+            condition: "LESS_THAN_OR_EQUAL"
+            value: 12000
+          - field: "class"
+            condition: "EQUALS"
+            value: "ECONOMY"
+          - field: "days_until_departure"
+            condition: "GREATER_THAN"
+            value: 7  # Prevents expensive last-minute domestic booking
+
+      # SCENARIO 2: International Long-Haul (Premium Student Tier)
+      - allOf:
+          - field: "destination"
+            condition: "IN_SET"
+            value: ["London", "New York", "Paris", "Singapore"]
+          - field: "price"
+            condition: "LESS_THAN_OR_EQUAL"
+            value: 85000
+          - field: "class"
+            condition: "IN_SET"
+            value: ["ECONOMY", "PREMIUM_ECONOMY"]
+
+    # If it fails both, trigger a manual check instead of a hard block
+    on_violation: "REQUIRE_HUMAN_APPROVAL"
+
+  - tool: "execute_payment"
+    action: "ALLOW"
+    anyOf:
+      # Trusted Vendors (Airlines/Hotels)
+      - allOf:
+          - field: "recipient_type"
+            condition: "EQUALS"
+            value: "VERIFIED_MERCHANT"
+          - field: "amount"
+            condition: "LESS_THAN_OR_EQUAL"
+            value: 50000
+      # Peer-to-Peer or New Vendors
+      - allOf:
+          - field: "recipient_type"
+            condition: "EQUALS"
+            value: "UNVERIFIED"
+          - field: "amount"
+            condition: "LESS_THAN_OR_EQUAL"
+            value: 5000
+    on_violation: "BLOCK_AND_LOG"
+
+# GLOBAL DENY LIST (Safety First)
+blacklists:
+  destinations: ["Restricted-Zone-A", "High-Risk-Region-B"]
+  vendors: ["ScamAir", "PhishHotels"]
