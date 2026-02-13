@@ -42,7 +42,7 @@ def generate_armor_intent_token(goal: str, actions: list) -> tuple:
             }
         },
         "identity": {
-            "user_id": "kiara-thapar-001",
+            "user_id": "",#update identity
             "agent_id": "travel-orchestrator",
             "context_id": "telegram-flight-booking"
         },
