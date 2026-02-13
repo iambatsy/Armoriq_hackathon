@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.1.30",
+    "lastTouchedAt": "2026-02-08T09:43:47.930Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-08T09:43:47.917Z",
+    "lastRunVersion": "2026.1.30",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "openai:default": {
+        "provider": "openai",
+        "mode": "api_key"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "openai/gpt-4o-mini"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "allowlist",
+      "botToken": "insert telegram bot token here",
+      "allowFrom": ["*"],
+      "groupPolicy": "allowlist",
+      "streamMode": "partial"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "8a6483796761b74ee1137e02f90e7d1a7437a2f0ae60ad4f"
+    }
+  },
+  "skills": {
+    "entries": {
+      "travel-executor": {
+        "enabled": true,
+        "env": {
+          "AMADEUS_CLIENT_ID": "",
+          "AMADEUS_CLIENT_SECRET": ""
+        }
+      }
+    }
+  },
+  "plugins": {
+    "enabled": true,
+    "entries": {
+      "armoriq": {
+        "enabled": true,
+        "config": {
+          "apiKey": "",
+          "agentId": "travel-orchestrator",
+          "policyUpdateAllowList": [
+            
+
+          ]
+        }
+      },
+      "telegram": {
+        "enabled": true
+      }
+    }
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": true,
+        "apiKey": ""
+      },
+      "fetch": {
+        "enabled": true
+      }
+    }
+  }
+}
