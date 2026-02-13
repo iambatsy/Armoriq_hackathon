@@ -26,6 +26,11 @@ AMADEUS_CLIENT_SECRET=your_amadeus_secret
 ARMOR_IQ_SECRET=
 ARMORIQ_API_KEY=your_armoriq_key
 ```
+also add your open ai api key:(you can choose a different llm if you wish)
+```bash
+echo "Environment=OPENAI_API_KEY=your_key_here" >> ~/.config/systemd/user/openclaw-gateway.service
+```
+
 ## Skill Installation
 
 Copy the skill to OpenClaw:
