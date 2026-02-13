@@ -73,8 +73,35 @@ python3 server.py
 
 Add to `~/.openclaw/openclaw.json`:
 the example file that ive sent to you
+To get the Travel Orchestrator running, you need to update your local openclaw.json (usually found at ~/.openclaw/openclaw.json) with your personal credentials.
+🛠️ Configuration Checklist
 
-Add skill file at `~/.openclaw/skills/travel-executor/SKILL.md` (see repo)
+Find the following lines in the file and fill in the missing values:
+1. Telegram Bot (Communication)
+
+    channels.telegram.botToken: Replace "insert telegram bot token here" with the token from @BotFather.
+
+2. Travel Skill (Amadeus API)
+
+    skills.entries.travel-executor.env:
+
+        AMADEUS_CLIENT_ID: Your Amadeus API Key.
+
+        AMADEUS_CLIENT_SECRET: Your Amadeus API Secret.
+
+        Get these from your Amadeus Self-Service Workspace.
+
+3. Security & Policies (ArmorIQ)
+
+    plugins.entries.armoriq.config.apiKey: Your unique ArmorIQ API key.
+
+    plugins.entries.armoriq.config.policyUpdateAllowList: Add your Telegram User ID (numerical) to this list.
+
+        To find your ID: Message @userinfobot and click "Start".
+
+4. Web Search (Intelligence)
+
+    tools.web.search.apiKey: Your OpenRouter or Google Search API key for live web browsing.
 
 ## ArmorIQ Integration
 
