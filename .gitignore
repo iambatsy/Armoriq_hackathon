@@ -1,7 +1,0 @@
-# Secrets and Config
-config.env
-.env
-*.localnode_modules/
-.env
-*.pyc
-.DS_Store
