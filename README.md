@@ -82,7 +82,12 @@ Add skill file at `~/.openclaw/skills/travel-executor/SKILL.md` (see repo)
 
 Message the Telegram bot:
 ```
-search for flights from Mumbai to Paris on June 15 2026, then book the cheapest one
+first read the travel-executor skill file, then search for flights from Mumbai to Paris on June 15 2026, then book the cheapest one
+OR
+first read the travel-executor skill file, then try to book a flight for $150000
+OR
+first read the travel-executor skill file, then search for hotels in London
+
 ```
 
 The system will:
