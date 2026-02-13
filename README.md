@@ -65,5 +65,3 @@ The system will:
 - OpenClaw Config: `aiq-openclaw/` directory
 - Live Demo: Telegram bot @YourBotName
 
-git commit -m "Add comprehensive README"
-git push
