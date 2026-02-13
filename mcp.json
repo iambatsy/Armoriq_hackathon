@@ -1,7 +1,7 @@
 "mcpServers": {
   "travel-executor": {
     "command": "python3",
-    "args": ["/home/kiara/hackathons/ARMORIQ/ClaudiusMaximus/executor/server.py"],
+    "args": ["executor/server.py"],
     "env": {
       "AMADEUS_CLIENT_ID": "ZVtc5gKKhAGlin2dJKMmMUXQsnJNGdzz",
       "AMADEUS_CLIENT_SECRET": "KwEzAh1IzeH6RAWa",

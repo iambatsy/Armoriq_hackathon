@@ -1,4 +1,7 @@
 # Secrets and Config
 config.env
 .env
-*.local
+*.localnode_modules/
+.env
+*.pyc
+.DS_Store
