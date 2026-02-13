@@ -1,6 +1,4 @@
-cd ~/hackathons/ARMORIQ/ClaudiusMaximus
 
-cat > README.md << 'EOF'
 # ClaudiusMaximus - ArmorIQ Travel MCP Server
 
 AI-powered travel booking with cryptographic intent verification via ArmorIQ.
@@ -66,8 +64,6 @@ The system will:
 - MCP Server: `executor/server.py`
 - OpenClaw Config: `aiq-openclaw/` directory
 - Live Demo: Telegram bot @YourBotName
-EOF
 
-git add README.md
 git commit -m "Add comprehensive README"
 git push
