@@ -111,6 +111,15 @@ Find the following lines in the file and fill in the missing values:
 - Policy enforcement: $100k spending limit
 
 ## Demo
+Once configured, restart the OpenClaw gateway to apply changes:
+Bash
+'''
+openclaw gateway restart
+'''
+and 
+'''
+openclaw  tui
+'''
 
 Message the Telegram bot:
 ```
