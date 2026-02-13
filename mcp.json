@@ -3,9 +3,9 @@
     "command": "python3",
     "args": ["executor/server.py"],
     "env": {
-      "AMADEUS_CLIENT_ID": "ZVtc5gKKhAGlin2dJKMmMUXQsnJNGdzz",
-      "AMADEUS_CLIENT_SECRET": "KwEzAh1IzeH6RAWa",
-      "ARMOR_IQ_SECRET": "hackathon-secret-key-2026"
+      "AMADEUS_CLIENT_ID": ,
+      "AMADEUS_CLIENT_SECRET": ,
+      "ARMOR_IQ_SECRET": 
     }
   }
 }
