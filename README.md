@@ -19,10 +19,11 @@ pip install fastmcp amadeus requests python-dotenv --break-system-packages
 
 ### 2. Configure Environment
 
-Create `executor/.env`:
+Create `/.env`:
 ```env
 AMADEUS_CLIENT_ID=your_amadeus_key
 AMADEUS_CLIENT_SECRET=your_amadeus_secret
+ARMOR_IQ_SECRET=
 ARMORIQ_API_KEY=your_armoriq_key
 ```
 
