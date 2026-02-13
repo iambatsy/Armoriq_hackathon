@@ -27,10 +27,12 @@ ARMORIQ_API_KEY=your_armoriq_key
 ```
 
 ### 3. Run MCP Server
+update mcp.json accordingly
 ```bash
 cd executor
 python3 server.py
 ```
+
 
 ### 4. Configure OpenClaw
 
