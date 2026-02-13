@@ -26,7 +26,36 @@ AMADEUS_CLIENT_SECRET=your_amadeus_secret
 ARMOR_IQ_SECRET=
 ARMORIQ_API_KEY=your_armoriq_key
 ```
+## Skill Installation
 
+Copy the skill to OpenClaw:
+```bash
+cp -r aiq-openclaw/skills/travel-executor ~/.openclaw/skills/
+```
+
+Restart OpenClaw:
+```bash
+pnpm openclaw gateway restart
+```
+## OpenClaw Skill Setup
+
+The travel-executor skill needs access to the MCP server files. Create symlinks:
+```bash
+cd ~/.openclaw/skills/travel-executor
+
+# Create symlinks to the MCP server
+ln -s /path/to/ClaudiusMaximus/executor/server.py server.py
+ln -s /path/to/ClaudiusMaximus/executor/utils.py utils.py
+```
+
+Or copy the actual files:
+```bash
+cp executor/server.py ~/.openclaw/skills/travel-executor/
+cp executor/utils.py ~/.openclaw/skills/travel-executor/
+```
+
+The skill (SKILL.md) tells OpenClaw how to call the MCP server via mcporter.
+The symlinks allow the skill to reference the server files if needed.
 ### 3. Run MCP Server
 update mcp.json accordingly
 ```bash
