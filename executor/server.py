@@ -19,7 +19,7 @@ amadeus = Client(
     client_secret=os.getenv("AMADEUS_CLIENT_SECRET")
 )
 
-ARMORIQ_API_KEY = os.getenv("ARMORIQ_API_KEY", "ak_live_f4c41a714560fb4ef41901cf50ef5b7e4c6c8ed6725b116c7cfc1f6e6c8fc4fd")
+ARMORIQ_API_KEY = os.getenv("ARMORIQ_API_KEY")
 
 def generate_armor_intent_token(goal: str, actions: list) -> tuple:
     """Generate an ArmorIQ intent token for a planned action."""
